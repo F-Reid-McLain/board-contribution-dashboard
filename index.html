@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Participation — Choose Macon 2030</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-main">CHOOSE MACON</span>
+                <span class="logo-accent">2030</span>
+            </div>
+            <div class="header-label">Board Participation Tracker</div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+
+            <section class="page-header">
+                <h2>Capital Campaign Board Participation</h2>
+                <p>Tracking board member contributions to the Choose Macon 2030 capital campaign</p>
+            </section>
+
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h4>Board Members</h4>
+                        <div class="stat-value" id="stat-total">—</div>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Have Contributed</h4>
+                        <div class="stat-value accent" id="stat-contributed">—</div>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Participation Rate</h4>
+                        <div class="stat-value" id="stat-rate">—</div>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Campaign Goal</h4>
+                        <div class="stat-value">100%</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dial-section">
+                <div class="dial-card">
+                    <div class="dial-wrapper">
+                        <svg class="dial-svg" viewBox="0 0 300 175" aria-hidden="true">
+                            <!-- Background track -->
+                            <path id="dial-track"
+                                  class="dial-track"
+                                  d="M 20,160 A 130,130 0 0,1 280,160"
+                                  fill="none"
+                                  stroke-linecap="round"
+                                  stroke-width="20"/>
+                            <!-- Progress arc -->
+                            <path id="dial-progress"
+                                  class="dial-progress"
+                                  d="M 20,160 A 130,130 0 0,1 280,160"
+                                  fill="none"
+                                  stroke-linecap="round"
+                                  stroke-width="20"/>
+                            <!-- Center labels -->
+                            <text x="150" y="102" class="dial-pct-text" id="dial-pct-text">0%</text>
+                            <text x="150" y="126" class="dial-sub-text">board participation</text>
+                            <!-- End markers -->
+                            <text x="16" y="172" class="dial-end-text">0%</text>
+                            <text x="284" y="172" class="dial-end-text" text-anchor="end">100%</text>
+                        </svg>
+                    </div>
+                    <p class="dial-goal-note">Goal: 100% board participation</p>
+                </div>
+            </section>
+
+            <section class="contributors-section">
+                <h3>Contributing Organizations</h3>
+                <div class="contributors-list" id="contributors-list"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
