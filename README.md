@@ -2,7 +2,9 @@
 
 A lightweight, single-page dashboard tracking board member contributions to the Choose Macon 2030 campaign.
 
-**Live repo:** https://github.com/F-Reid-McLain/board-contribution-dashboard
+**Live site:** https://f-reid-mclain.github.io/board-contribution-dashboard/
+
+**Repo:** https://github.com/F-Reid-McLain/board-contribution-dashboard
 
 ## Updating the data
 
