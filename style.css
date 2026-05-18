@@ -150,8 +150,8 @@ body {
 }
 
 .dial-individual {
-    stroke: #f59e0b;
-    filter: drop-shadow(0 0 7px rgba(245, 158, 11, 0.5));
+    stroke: #66bb6a;
+    filter: drop-shadow(0 0 7px rgba(102, 187, 106, 0.5));
 }
 
 .dial-legend {
@@ -178,7 +178,7 @@ body {
 }
 
 .legend-dot--org        { background: var(--accent); }
-.legend-dot--individual { background: #f59e0b; }
+.legend-dot--individual { background: #66bb6a; }
 
 .dial-pct-text {
     font-family: var(--font);
@@ -201,7 +201,7 @@ body {
 .dial-indiv-text {
     font-family: var(--font);
     font-size: 10px;
-    fill: #f59e0b;
+    fill: #66bb6a;
     text-anchor: middle;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -297,7 +297,7 @@ body {
     right: -5px;
     width: 14px;
     height: 14px;
-    background: #22c55e;
+    background: #66bb6a;
     border-radius: 50%;
     border: 2px solid var(--bg-surface);
     display: flex;

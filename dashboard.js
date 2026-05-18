@@ -81,7 +81,6 @@ function initDashboard(boardMembers) {
   // --- Populate stat cards ---
   document.getElementById('stat-total').textContent       = total;
   document.getElementById('stat-contributed').textContent = contributed;
-  document.getElementById('stat-rate').textContent        = (percent * 100).toFixed(1) + '%';
   document.getElementById('stat-individual').textContent  = indivCount;
 
   // --- Build contributor cards ---
