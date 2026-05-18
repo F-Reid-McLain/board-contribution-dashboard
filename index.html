@@ -32,7 +32,7 @@
                         <div class="stat-value" id="stat-total">—</div>
                     </div>
                     <div class="stat-card">
-                        <h4>Have Contributed</h4>
+                        <h4>Contributed</h4>
                         <div class="stat-value accent" id="stat-contributed">—</div>
                     </div>
                     <div class="stat-card">
@@ -40,8 +40,8 @@
                         <div class="stat-value" id="stat-rate">—</div>
                     </div>
                     <div class="stat-card">
-                        <h4>Campaign Goal</h4>
-                        <div class="stat-value">100%</div>
+                        <h4>Individual Contributors</h4>
+                        <div class="stat-value" id="stat-individual" style="color:#f59e0b;">—</div>
                     </div>
                 </div>
             </section>
@@ -57,20 +57,38 @@
                                   fill="none"
                                   stroke-linecap="round"
                                   stroke-width="20"/>
-                            <!-- Progress arc -->
+                            <!-- Progress arc (org contributors) -->
                             <path id="dial-progress"
                                   class="dial-progress"
                                   d="M 20,160 A 130,130 0 0,1 280,160"
                                   fill="none"
                                   stroke-linecap="round"
                                   stroke-width="20"/>
+                            <!-- Individual contributor arc (overlays start of progress arc) -->
+                            <path id="dial-individual"
+                                  class="dial-individual"
+                                  d="M 20,160 A 130,130 0 0,1 280,160"
+                                  fill="none"
+                                  stroke-linecap="round"
+                                  stroke-width="20"/>
                             <!-- Center labels -->
-                            <text x="150" y="102" class="dial-pct-text" id="dial-pct-text">0%</text>
-                            <text x="150" y="126" class="dial-sub-text">board participation</text>
+                            <text x="150" y="98" class="dial-pct-text" id="dial-pct-text">0%</text>
+                            <text x="150" y="120" class="dial-sub-text">board participation</text>
+                            <text x="150" y="138" class="dial-indiv-text" id="dial-indiv-text">0% individual</text>
                             <!-- End markers -->
                             <text x="20" y="182" class="dial-end-text" text-anchor="middle">0%</text>
                             <text x="280" y="182" class="dial-end-text" text-anchor="middle">100%</text>
                         </svg>
+                        <div class="dial-legend">
+                            <span class="legend-item">
+                                <span class="legend-dot legend-dot--org"></span>
+                                Org contributors
+                            </span>
+                            <span class="legend-item">
+                                <span class="legend-dot legend-dot--individual"></span>
+                                Individual contributors
+                            </span>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -55,8 +55,10 @@ fetch('board_members.csv')
   .then(text => {
     const rows = parseCSV(text);
     const boardMembers = rows.map(r => ({
-      org:         r['Organization'],
-      contributed: r['Contributer'] === '1',
+      name:         r['Name'],
+      org:          r['Organization'],
+      contributed:  r['Contributer'] === '1',
+      isIndividual: r['Individual Contributor'] === '1',
     }));
     initDashboard(boardMembers);
   })
@@ -68,6 +70,8 @@ function initDashboard(boardMembers) {
   const total       = boardMembers.length;
   const contributed = boardMembers.filter(m => m.contributed).length;
   const percent     = contributed / total;
+  const indivCount  = boardMembers.filter(m => m.isIndividual).length;
+  const indivPercent = indivCount / total;
 
   // Unique contributing org names (deduplicated)
   const contributorOrgs = [...new Set(
@@ -78,6 +82,7 @@ function initDashboard(boardMembers) {
   document.getElementById('stat-total').textContent       = total;
   document.getElementById('stat-contributed').textContent = contributed;
   document.getElementById('stat-rate').textContent        = (percent * 100).toFixed(1) + '%';
+  document.getElementById('stat-individual').textContent  = indivCount;
 
   // --- Build contributor cards ---
   const list = document.getElementById('contributors-list');
@@ -130,32 +135,39 @@ function initDashboard(boardMembers) {
   }
 
   function animateDial() {
-    const progress  = document.getElementById('dial-progress');
-    const track     = document.getElementById('dial-track');
-    const pctText   = document.getElementById('dial-pct-text');
-    const arcLength = progress.getTotalLength();
+    const progress    = document.getElementById('dial-progress');
+    const individual  = document.getElementById('dial-individual');
+    const track       = document.getElementById('dial-track');
+    const pctText     = document.getElementById('dial-pct-text');
+    const indivText   = document.getElementById('dial-indiv-text');
+    const arcLength  = progress.getTotalLength();
 
     track.style.strokeDasharray  = arcLength;
     track.style.strokeDashoffset = '0';
     progress.style.strokeDasharray  = arcLength;
     progress.style.strokeDashoffset = arcLength;
+    individual.style.strokeDasharray  = arcLength;
+    individual.style.strokeDashoffset = arcLength;
 
-    const targetOffset = arcLength * (1 - percent);
-    const duration     = 1500;
-    const start        = performance.now();
+    const targetOffset      = arcLength * (1 - percent);
+    const targetIndivOffset = arcLength * (1 - indivPercent);
+    const duration = 1500;
+    const start    = performance.now();
 
     function step(now) {
-      const t      = Math.min((now - start) / duration, 1);
-      const eased  = easeOutCubic(t);
-      const offset = arcLength - eased * (arcLength - targetOffset);
+      const t     = Math.min((now - start) / duration, 1);
+      const eased = easeOutCubic(t);
 
-      progress.style.strokeDashoffset = offset;
-      pctText.textContent = (eased * percent * 100).toFixed(1) + '%';
+      progress.style.strokeDashoffset   = arcLength - eased * (arcLength - targetOffset);
+      individual.style.strokeDashoffset = arcLength - eased * (arcLength - targetIndivOffset);
+      pctText.textContent   = (eased * percent * 100).toFixed(1) + '%';
+      indivText.textContent = (eased * indivPercent * 100).toFixed(1) + '% individual';
 
       if (t < 1) {
         requestAnimationFrame(step);
       } else {
-        pctText.textContent = (percent * 100).toFixed(1) + '%';
+        pctText.textContent   = (percent * 100).toFixed(1) + '%';
+        indivText.textContent = (indivPercent * 100).toFixed(1) + '% individual';
       }
     }
 
