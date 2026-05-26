@@ -75,7 +75,7 @@ function initDashboard(boardMembers) {
 
   // Unique contributing org names (deduplicated)
   const contributorOrgs = [...new Set(
-    boardMembers.filter(m => m.contributed).map(m => m.org)
+    boardMembers.filter(m => m.contributed && !m.isIndividual).map(m => m.org)
   )];
 
   // --- Populate stat cards ---
