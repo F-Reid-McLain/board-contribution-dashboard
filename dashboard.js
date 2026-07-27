@@ -14,7 +14,7 @@ const orgLogos = {
   "Georgia Power":                      "logos/Georgia Power.png",
   "Piedmont Macon Medical Center":      "logos/piedmont.png",
   "The Miner Agency":                   "logos/tma-logo-dark.png",
-  "YKK Corp":                           "logos/YKK_Group_Logo.svg.png",
+  "YKK":                                "logos/YKK_Group_Logo.svg.png",
   "Atrium Health Navicent":             "logos/atrium-heath-navicent-logo-tm-1.webp",
   "SPINEN":                             "logos/spinen-main-logo.webp",
   "Mercer University":                  "logos/mercer university.png",
