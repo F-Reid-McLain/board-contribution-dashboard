@@ -5,14 +5,20 @@
 
 // Logo map: org name -> local file (falls back to initials)
 const orgLogos = {
-  "All-State Electrical":          "logos/all state.png",
-  "Sheridan Construction":         "logos/sheridan.webp",
-  "Cadence Bank":                  "logos/Cadence Bank.png",
-  "H2 Capital":                    "logos/H2 Capital.png",
-  "Terracon":                      "logos/terracon.webp",
-  "Wesleyan College":              "logos/wesleyan.png",
-  "Georgia Power":                 "logos/Georgia Power.png",
-  "Piedmont Macon Medical Center": "logos/piedmont.png",
+  "All-State Electrical":               "logos/all state.png",
+  "Sheridan Construction":              "logos/sheridan.webp",
+  "Cadence Bank":                       "logos/Cadence Bank.png",
+  "H2 Capital":                         "logos/H2 Capital.png",
+  "Terracon":                           "logos/terracon.webp",
+  "Wesleyan College":                   "logos/wesleyan.png",
+  "Georgia Power":                      "logos/Georgia Power.png",
+  "Piedmont Macon Medical Center":      "logos/piedmont.png",
+  "The Miner Agency":                   "logos/tma-logo-dark.png",
+  "YKK Corp":                           "logos/YKK_Group_Logo.svg.png",
+  "Atrium Health Navicent":             "logos/atrium-heath-navicent-logo-tm-1.webp",
+  "SPINEN":                             "logos/spinen-main-logo.webp",
+  "Mercer University":                  "logos/mercer university.png",
+  "Macon-Bibb Co. Industrial Authority": "logos/mbciauthority_logo.jpeg",
 };
 
 function getInitials(name) {
