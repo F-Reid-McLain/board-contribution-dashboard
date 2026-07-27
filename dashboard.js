@@ -19,6 +19,7 @@ const orgLogos = {
   "SPINEN":                             "logos/spinen-main-logo.webp",
   "Mercer University":                  "logos/mercer university.png",
   "Macon-Bibb Co. Industrial Authority": "logos/mbciauthority_logo.jpeg",
+  "Unified Defense":                     "logos/unifieddefenseus_548602821.svg",
 };
 
 function getInitials(name) {
