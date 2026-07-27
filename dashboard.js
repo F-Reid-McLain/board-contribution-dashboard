@@ -59,6 +59,7 @@ fetch('board_members.csv')
       org:          r['Organization'],
       contributed:  r['Contributer'] === '1',
       isIndividual: r['Individual Contributor'] === '1',
+      boardSeat:    r['Board Seat'] === '1',
     }));
     initDashboard(boardMembers);
   })
@@ -67,13 +68,17 @@ fetch('board_members.csv')
 function initDashboard(boardMembers) {
 
   // --- Derived stats ---
-  const total       = boardMembers.length;
-  const contributed = boardMembers.filter(m => m.contributed).length;
+  // Board participation counts only actual board seats, so an org whose
+  // representative already contributed individually isn't double-counted.
+  const boardSeats  = boardMembers.filter(m => m.boardSeat);
+  const total       = boardSeats.length;
+  const contributed = boardSeats.filter(m => m.contributed).length;
   const percent     = contributed / total;
-  const indivCount  = boardMembers.filter(m => m.isIndividual).length;
+  const indivCount  = boardSeats.filter(m => m.isIndividual).length;
   const indivPercent = indivCount / total;
 
-  // Unique contributing org names (deduplicated)
+  // Unique contributing org names (deduplicated) — includes org-only rows
+  // (e.g. a company pledge separate from its board rep's individual pledge)
   const contributorOrgs = [...new Set(
     boardMembers.filter(m => m.contributed && !m.isIndividual).map(m => m.org)
   )];
