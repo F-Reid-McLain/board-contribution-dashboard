@@ -7,7 +7,6 @@
 const orgLogos = {
   "All-State Electrical":               "logos/all state.png",
   "Sheridan Construction":              "logos/sheridan.webp",
-  "Cadence Bank":                       "logos/Cadence Bank.png",
   "H2 Capital":                         "logos/H2 Capital.png",
   "Terracon":                           "logos/terracon.webp",
   "Wesleyan College":                   "logos/wesleyan.png",
