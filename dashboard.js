@@ -19,6 +19,7 @@ const orgLogos = {
   "Mercer University":                  "logos/mercer university.png",
   "Macon-Bibb Co. Industrial Authority": "logos/mbciauthority_logo.jpeg",
   "Unified Legacy":                      "logos/19-05-2026-10-52-36-pm-5756582.png",
+  "Huntington Bank":                     "logos/MemPageHeader_H-Bank_Logo_2019_GREEN_RGB.png",
 };
 
 function getInitials(name) {
